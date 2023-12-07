@@ -54,9 +54,6 @@ func str(hand [5]byte) int {
 		if numJoker == 0 && numPairs == 2 {
 			return 2
 		}
-		if numJoker == 0 && numPairs == 0 {
-			return 3
-		}
 		return 3
 	case 2:
 		if numJoker == 0 && numTrips == 1 {
