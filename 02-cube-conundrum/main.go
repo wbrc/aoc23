@@ -11,10 +11,6 @@ type set struct {
 	r, g, b int
 }
 
-func (b set) possible(s set) bool {
-	return b.r >= s.r && b.g >= s.g && b.b >= s.b
-}
-
 func parseSet(line string) set {
 	var s set
 	tokens := strings.Split(line, ",")

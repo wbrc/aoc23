@@ -92,34 +92,14 @@ func (m motor) adjNumbers(c coord) []coord {
 	return adjNums
 }
 
-func isSpecial(r rune) bool {
-	return !isDigit(r) && r != '.'
-}
-
 func isDigit(r rune) bool {
 	return '0' <= r && r <= '9'
 }
-
-func digits(num int) int {
-	if num == 0 {
-		return 1
-	}
-	var digits int
-	for num > 0 {
-		num /= 10
-		digits++
-	}
-	return digits
-}
-
-//go:embed input.txt
-var intputData []byte
 
 func main() {
 	var grid motor
 
 	for s := bufio.NewScanner(os.Stdin); s.Scan(); {
-		// for s := bufio.NewScanner(bytes.NewReader(intputData)); s.Scan(); {
 		line := strings.TrimSpace(s.Text())
 		var row []rune
 		for _, r := range line {

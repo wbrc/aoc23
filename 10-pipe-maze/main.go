@@ -101,21 +101,6 @@ func (m pipeMaze) setFrom(p pos, from cameFrom) {
 	m[p.row][p.col].cameFrom = from
 }
 
-func (m pipeMaze) pre(p pos) pos {
-	switch m.at(p).cameFrom {
-	case cameFromUp:
-		return p.down()
-	case cameFromDown:
-		return p.up()
-	case cameFromLeft:
-		return p.right()
-	case cameFromRight:
-		return p.left()
-	default:
-		return p
-	}
-}
-
 func (m pipeMaze) next(p pos) pos {
 	switch m.at(p).pipeType {
 	case pipeVertical:
